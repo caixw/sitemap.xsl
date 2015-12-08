@@ -2,6 +2,7 @@
 
 将[sitemaps](http://www.sitemaps.org)转换成html的工具，
 在sitemap.xml文件中引用，可以在浏览器中呈现出一个比较美观的人机界面。
+具体使用方式可参考[sitemap.xml](sitemap.xml)文件。
 
 
 ### 版权
