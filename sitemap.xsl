@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-为sitemap.xml产生一个比较美观的人机界面。
+为 sitemap.xml 产生一个比较美观的人机界面。
 
-@author     caixw <http://github.com/caixw>
-@copyright  Copyright(C) 2010-2015, caixw
+@author     caixw <https://github.com/caixw>
+@copyright  Copyright(C) 2010-2017, caixw
 @license    MIT License
 @date       2010-01-02
 @update     2015-10-20
