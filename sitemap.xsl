@@ -91,7 +91,7 @@ tbody tr:hover {
     <xsl:apply-templates select="sm:urlset" />
 
     <footer>
-        <p>此 XSL 模板由 <a href="https://caixw.io">caixw</a> 制作，并基于 <a href="https://www.opensource.org/licenses/MIT">MIT</a> 版权发布。</p>
+        <p>此 <a href="https://github.com/caixw/sitemap.xsl">XSL 模板</a>由 <a href="https://caixw.io">caixw</a> 制作，并基于 <a href="https://www.opensource.org/licenses/MIT">MIT</a> 版权发布。</p>
     </footer>
 </body>
 </html>
@@ -116,7 +116,7 @@ tbody tr:hover {
 
     <tbody>
         <xsl:for-each select="sm:url">
-        <xsl:sort select="./sm:lastmod" data-type="string" order="descending" />
+        <xsl:sort select="./sm:lastmod" order="descending" />
         <tr>
             <td>
                 <a>
