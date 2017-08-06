@@ -29,12 +29,10 @@ html {
 body {
     text-align: center;
 }
-
 a {
-    text-decoration:none;
+    color: black;
 }
 a:hover {
-    text-decoration:underline;
     color:#c96;
 }
 .error {
@@ -45,28 +43,40 @@ header, footer, main {
     text-align: left;
 }
 
+header .desc {
+    background-color: #cfebf7;
+    border: 1px #2580B2 solid; 
+    padding: .8rem;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    color: #2580B2;
+}
+
 /* 表格的相关设置 */
 table {
-    width:100%;
-    text-align:left;
-    border-collapse:collapse;
-    line-height:1.5;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    line-height: 1.5;
 }
 table a {
-    color:#123;
+    color: #123;
 }
 td, th {
-    padding:1px 5px;
+    padding: 1px 5px;
 }
 thead tr, tfoot tr {
-    background:#ddd;
-    height:1.6rem;
+    background: #eee;
+    height: 1.6rem;
+    line-height: 1.6;
 }
 tbody tr:nth-of-type(even) {
-    background:#eee
+    background: whitesmoke;
 }
 tbody tr:hover {
-    background:#ddd
+    background: #eee
 }
 
 .lastmod {
@@ -83,15 +93,17 @@ tbody tr:hover {
 <body>
     <header>
         <h1>XML Sitemap</h1>
+        <div class="desc">
         <p>这是个标准的 sitemap 文件。您可以将此文件提交给 <a href="https://www.google.com/webmasters/tools/">Google</a>、<a href="https://www.bing.com/webmaster">Bing</a> 或<a href="https://sitemap.baidu.com">百度</a>，让搜索引擎更好地收录您的网站内容。</p>
 
         <p>若是存在 sitemap 的索引文件，则<strong>只需提交索引文件</strong>即可。更详细的信息请参考<a href="https://www.sitemaps.org/zh_CN/protocol.php">这里</a>。</p>
+        </div>
     </header>
 
     <xsl:apply-templates select="sm:urlset" />
 
     <footer>
-        <p>此 <a href="https://github.com/caixw/sitemap.xsl">XSL 模板</a>由 <a href="https://caixw.io">caixw</a> 制作，并基于 <a href="https://www.opensource.org/licenses/MIT">MIT</a> 版权发布。</p>
+        <p>此 <a href="https://github.com/caixw/sitemap.xsl">XSL 模板</a>由 <a href="https://caixw.io">caixw</a> 制作，并采用 <a href="https://www.opensource.org/licenses/MIT">MIT</a> 开源许可证发布。</p>
     </footer>
 </body>
 </html>
