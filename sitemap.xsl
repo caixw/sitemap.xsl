@@ -80,7 +80,7 @@ tbody tr:hover {
 }
 
 .lastmod {
-    width: 8rem;
+    width: 10rem;
 }
 .changefreq {
     width: 5rem;
@@ -128,7 +128,7 @@ tbody tr:hover {
 
     <tbody>
         <xsl:for-each select="sm:url">
-        <xsl:sort select="./sm:lastmod" order="descending" />
+        <!--xsl:sort select="./sm:lastmod" order="descending" /-->
         <tr>
             <td>
                 <a>
