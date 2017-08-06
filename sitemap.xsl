@@ -9,59 +9,89 @@
 @update     2017-08-06
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9">
-<xsl:output method="html" encoding="utf-8" indent="yes" version="1.0" />
+<xsl:output
+    method="html"
+    encoding="utf-8"
+    indent="yes"
+    version="5.0"
+    doctype-system="about:legacy-compat" />
+
 <xsl:template match="/">
-<!-- xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text -->
-<html>
+<html lang="zh-cmn-Hans">
 <head>
 <title>XML Sitemap</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content="http://caixw.io" />
 <style type="text/css">
-a{text-decoration:none;color:#123}
-a:hover{text-decoration:underline;color:#c96}
-.bold{font-weight:bold}
-.error{color:red}
+a {
+    text-decoration:none;
+    color:#123;
+}
+a:hover {
+    text-decoration:underline;
+    color:#c96;
+}
+.error {
+    color:red
+}
 
-header h1{font-size:1.5em;font-weight:bold}
-header .desc,footer{margin:0.7em;line-height:1.8em}
-header a,footer a{color:blue}
+header a,footer a {
+    color:blue
+}
 
-table{width:100%;text-align:left;line-height:1.5em;border-collapse:collapse}
-td, th{padding:0em 0.3em}
-thead tr, tfoot tr{background:#ddd;height:1.6em}
-tbody tr:nth-of-type(even){background:#eee}
-tbody tr:hover{background:#ddd}
+table {
+    width:100%;
+    text-align:left;
+    border-collapse:collapse;
+    line-height:1.5;
+}
+td, th {
+    padding:1px 5px;
+}
+thead tr, tfoot tr {
+    background:#ddd;
+    height:1.6rem;
+}
+tbody tr:nth-of-type(even) {
+    background:#eee
+}
+tbody tr:hover {
+    background:#ddd
+}
 </style>
 </head>
 <body>
     <header>
-    <h1>XML Sitemap</h1>
-    <div class="desc">这是个标准的 sitemap 文件。您可以将此文件提交给<a href="https://www.google.com/webmasters/tools/">Google</a>、<a href="https://www.bing.com/webmaster">Bing</a> 或<a href="https://sitemap.baidu.com">百度</a>，让搜索引擎更好地收录您的网站内容。<br />
-        若是存在 sitemap 的索引文件，则<span class="bold">只需提交索引文件</span>即可。更详细的信息请参考<a href="https://www.sitemaps.org/zh_CN/protocol.php">这里</a>。
-        </div><!-- end desc -->
+        <h1>XML Sitemap</h1>
+        <p>这是个标准的 sitemap 文件。您可以将此文件提交给 <a href="https://www.google.com/webmasters/tools/">Google</a>、<a href="https://www.bing.com/webmaster">Bing</a> 或<a href="https://sitemap.baidu.com">百度</a>，让搜索引擎更好地收录您的网站内容。</p>
+
+        <p>若是存在 sitemap 的索引文件，则<strong>只需提交索引文件</strong>即可。更详细的信息请参考<a href="https://www.sitemaps.org/zh_CN/protocol.php">这里</a>。</p>
     </header>
+
     <xsl:apply-templates select="sm:urlset" />
-    <footer>此 XSL 模板由 <a href="https://caixw.io">caixw</a> 制作，并基于 <a href="https://www.opensource.org/licenses/MIT">MIT</a> 版权发布。</footer>
+
+    <footer>
+        <p>此 XSL 模板由 <a href="https://caixw.io">caixw</a> 制作，并基于 <a href="https://www.opensource.org/licenses/MIT">MIT</a> 版权发布。</p>
+    </footer>
 </body>
 </html>
 </xsl:template>
 
 
 <xsl:template match="sm:urlset">
-<div id="content">
+<main>
 <table>
     <thead>
-    <tr>
-        <th>地址</th>
-        <th>最后更新</th>
-        <th>更新频率</th>
-        <th>权重</th>
-    </tr>
+        <tr>
+            <th>地址</th>
+            <th>最后更新</th>
+            <th>更新频率</th>
+            <th>权重</th>
+        </tr>
     </thead>
     <tfoot>
-        <tr><td colspan="4">当前总共<xsl:value-of select="count(/sm:urlset/sm:url)" />条记录</td></tr>
+        <tr><td colspan="4">当前总共 <xsl:value-of select="count(/sm:urlset/sm:url)" /> 条记录</td></tr>
     </tfoot>
     <tbody>
         <xsl:for-each select="sm:url">
@@ -88,7 +118,7 @@ tbody tr:hover{background:#ddd}
         </xsl:for-each>
     </tbody>
 </table>
-</div>
+</main>
 </xsl:template>
 
 </xsl:stylesheet>
