@@ -8,7 +8,7 @@
 
 https://caixw.io/sitemap.xml
 
-![screenshort](screenshot.png)
+![screenshort](screenshort.png)
 
 
 ### 版权
