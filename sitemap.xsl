@@ -46,7 +46,7 @@ header, footer, main {
 header .desc {
     background-color: #cfebf7;
     border: 1px #2580B2 solid; 
-    padding: .8rem;
+    padding: .4rem .8rem;
     margin-bottom: 1rem;
 }
 
