@@ -7,7 +7,7 @@
 @date       2010-01-02
 @update     2017-08-06
 -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xsl:output
     method="html"
     encoding="utf-8"
@@ -67,6 +67,9 @@ table a {
 td, th {
     padding: 1px 5px;
 }
+td.sitemap-lastmod {
+    text-align:right;
+}
 thead tr, tfoot tr {
     background: #eee;
     height: 1.6rem;
@@ -111,6 +114,13 @@ tbody tr:hover {
 
 
 <xsl:template match="sm:urlset">
+<xsl:variable name="max">
+  <xsl:for-each select="/sm:urlset/sm:url/sm:lastmod">
+    <xsl:sort select="." order="descending" />
+    <xsl:if test="position() = 1"><xsl:value-of select="." /></xsl:if>
+  </xsl:for-each>
+</xsl:variable>
+
 <main>
 <table>
     <thead>
@@ -123,7 +133,10 @@ tbody tr:hover {
     </thead>
 
     <tfoot>
-        <tr><td colspan="4">当前总共 <xsl:value-of select="count(/sm:urlset/sm:url)" /> 条记录</td></tr>
+        <tr>
+            <td colspan="1">当前总共&#160;<xsl:value-of select="count(/sm:urlset/sm:url)" />&#160;条记录</td>
+            <td colspan="3" class="sitemap-lastmod">最后更新于&#160;<span><xsl:value-of select="$max" /></span></td>
+        </tr>
     </tfoot>
 
     <tbody>
