@@ -7,7 +7,7 @@
 @date       2010-01-02
 @update     2017-08-06
 -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9">
 <xsl:output
     method="html"
     encoding="utf-8"
@@ -114,6 +114,7 @@ tbody tr:hover {
 
 
 <xsl:template match="sm:urlset">
+
 <xsl:variable name="max">
   <xsl:for-each select="/sm:urlset/sm:url/sm:lastmod">
     <xsl:sort select="." order="descending" />
