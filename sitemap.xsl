@@ -5,7 +5,7 @@
 @author     caixw <https://caixw.io>
 @license    MIT License
 @date       2010-01-02
-@update     2017-09-13
+@update     2021-01-08
 -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9">
 <xsl:output
@@ -20,7 +20,7 @@
 <head>
 <title>XML Sitemap</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content="http://caixw.io" />
+<meta name="generator" content="https://caixw.io" />
 <style type="text/css">
 html {
     max-width: 1024px;
